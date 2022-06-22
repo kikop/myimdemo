@@ -1,0 +1,6 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.kikop.config.WebMvcConfig,\
+  com.kikop.aspect.InnerAuthAspect,\
+  com.kikop.aspect.PreAuthorizeAspect,\
+  com.kikop.service.RedisTokenService,\
+  com.kikop.handler.GlobalExceptionHandler

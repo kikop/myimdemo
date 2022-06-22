@@ -1,0 +1,17 @@
+spring:
+# 1.指定环境:开发v
+ profiles:
+  active: dev
+
+# 2.网关陈配置redis,用于缓存userId:netty服务器的路由信息
+# jedis客户端连接线程池
+ redis:
+  host: 127.0.0.1
+  port: 6379
+  password:
+  database: 0
+  jedis:
+      pool:
+        max-active: 500
+        max-idle: 1000
+        min-idle: 4

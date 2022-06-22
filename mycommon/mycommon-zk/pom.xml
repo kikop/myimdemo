@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>com.kikop</groupId>
+        <artifactId>mycommon</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+
+    <artifactId>mycommon-zk</artifactId>
+    <name>${project.artifactId}</name>
+
+
+    <!-- FIXME change it to the project's website -->
+    <url>http://www.example.com</url>
+    <description>zk服务注册模块</description>
+
+    <properties>
+        <!--begin add common version define-->
+
+        <!--1.文件编码-->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <encoding>UTF-8</encoding>
+
+        <!--2.JDK-->
+        <!--指定java版本即可,maven会默认用 1.5的版本编译,导致编译出错-->
+        <java.version>1.8</java.version>
+
+        <!--3.maven-->
+        <!--指定maven编译JDK版本-->
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <!--跳过maven测试-->
+        <!--<maven.test.skip>true</maven.test.skip>-->
+        <maven_compiler.version>3.8.0</maven_compiler.version>
+
+        <!--end add common version define-->
+
+    </properties>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>com.kikop</groupId>
+            <artifactId>mycommon-core</artifactId>
+        </dependency>
+
+
+        <!--1.zookeeper-->
+        <!-- https://mvnrepository.com/artifact/org.apache.zookeeper/zookeeper -->
+        <dependency>
+            <groupId>org.apache.zookeeper</groupId>
+            <artifactId>zookeeper</artifactId>
+        </dependency>
+
+        <!--2.curator-->
+        <!--2.1.curator-framework,对底层 ZK API的一些封装-->
+        <!--单独引用zookeeper-->
+        <dependency>
+            <groupId>org.apache.curator</groupId>
+            <artifactId>curator-framework</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.apache.zookeeper</groupId>
+                    <artifactId>zookeeper</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <!--2.2.zookeeper client-api:curator,提供了一些客户端操作,如重试策略等-->
+        <!--单独引用zookeeper-->
+        <dependency>
+            <groupId>org.apache.curator</groupId>
+            <artifactId>curator-client</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.apache.zookeeper</groupId>
+                    <artifactId>zookeeper</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <!--2.3.curator-recipes,封装了一些高级特性,如 cache事件监听、选举、分布式锁、分布式计数器、分布式 Barrier等-->
+        <dependency>
+            <groupId>org.apache.curator</groupId>
+            <artifactId>curator-recipes</artifactId>
+        </dependency>
+
+
+    </dependencies>
+
+</project>
+

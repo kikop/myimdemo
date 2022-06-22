@@ -1,0 +1,16 @@
+spring:
+# 1.指定部署环境
+ profiles:
+  active: dev
+
+# 2.网关陈配置redis,用于缓存token及失效时间
+ redis:
+  host: 127.0.0.1
+  port: 6379
+  password:
+  database: 0
+  jedis:
+      pool:
+        max-active: 500
+        max-idle: 1000
+        min-idle: 4

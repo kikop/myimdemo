@@ -1,0 +1,4 @@
+# 扩展点:外部业务系统为SpringBoot工程时,基于SPI实现 Bean 自动注入
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.kikop.config.RedisConfig,\
+  com.kikop.service.RedisService

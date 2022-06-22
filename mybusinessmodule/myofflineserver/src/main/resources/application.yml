@@ -1,0 +1,11 @@
+spring:
+# 1.指定环境:开发v
+ profiles:
+  active: dev
+
+##3.自定义配置文件参数
+#myinfo:
+##  enabled: true
+#  aliasname: kikop
+#  hobby: swim
+#  place: huaian

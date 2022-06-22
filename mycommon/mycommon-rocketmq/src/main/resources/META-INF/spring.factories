@@ -1,0 +1,4 @@
+# 扩展点:外部业务系统为 SpringBoot工程时,实现 Bean 自动注入
+# 特别是命名空间不一致时
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.kikop.config.MyRocketMQConfig
